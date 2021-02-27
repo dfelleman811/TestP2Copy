@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excape - Employee Portal</title>
+
+    <link rel="icon" type="img/png" href="img/favicon.png">
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!-- FontAwesome CDN -->
+    <script src="https://kit.fontawesome.com/91073f3496.js" crossorigin="anonymous"></script>
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+</head>
+
+<body onload="loadStats()">
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-md bg-light sticky-top py-2">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Excape</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-right" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto flex-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">Cart</a>
+                    </li>
+                    <li class="nav-item d-flex">
+                        <input id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Employee Portal</h1>
+    
+        <br>
+        <hr>
+        <br>
+
+        <div class="container-fluid">
+            <h4>Add Items to Inventory</h4>
+            <br>
+            <form>
+
+                <div class="form-group row">
+                    <label for="name" class="col-sm-2 col-form-label">Item Name: </label>
+                    <div class="col-sm-10">
+                        <input type=text name="name" id="name" style="margin:5px">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="description" class="col-sm-2 col-form-label">Item Description: </label>
+                    <div class="col-sm-10">
+                        <input type=text name="description" id="description" style="margin:5px">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="costPerUnit" class="col-sm-2 col-form-label">Cost Per Unit: </label>
+                    <div class="col-sm-10">
+                        <input type=number name="costPerUnit" id="costPerUnit" style="margin:5px">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="quantity" class="col-sm-2 col-form-label">Quantity: </label>
+                    <div class="col-sm-10">
+                        <input type=number name="quantity" id="quantity" style="margin:5px">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="weight" class="col-sm-2 col-form-label">Item Weight: </label>
+                    <div class="col-sm-10">
+                        <input type=number name="weight" id="weight" style="margin:5px">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="dimensions" class="col-sm-2 col-form-label">Item Dimensions: </label>
+                    <div class="col-sm-10">
+                        <input type=text name="dimensions" id="dimensions" style="margin:5px">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="type" class="col-sm-2 col-form-label">Item Type: </label>
+                    <div class="col-sm-10">
+                        <select name="type" id="type" style="margin:5px">
+                            <option selected disabled hidden>Select Type</option>
+                            <option value="Logic Puzzles">Logic Puzzles</option>
+                            <option value="Digital Puzzles">Digital Puzzles</option>
+                            <option value="Number Puzzles">Number Puzzles</option>
+                            <option value="Word Puzzles">Word Puzzles</option>
+                            <option value="Decoder Puzzles">Decoder Puzzles</option>
+                            <option value="Physical Puzzles">Physical Puzzles</option>
+                            <option value="Props">Props</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="vendor" class="col-sm-2 col-form-label">Vendor Name: </label>
+                    <div class="col-sm-10">
+                        <select name="vendor" id="vendor" style="margin:5px">
+                            <option selected disabled hidden>Vendor</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- <div class="form-group row">
+                    <label for="salePrice" class="col-sm-2 col-form-label">Sales Price: </label>
+                    <div class="col-sm-10">
+                        <input type=number name="salePrice" id="salePrice" style="margin:5px">
+                    </div>
+                </div> -->
+
+                <div class="form-group-row">
+                    <div class="col-sm-10">
+                        <button type="submit" style="margin-top:10px" class="btn btn-success" id="formSubmit" >Submit</button>
+                    </div>
+                </div>
+                </form>
+        </div>
+
+        <br>
+        <hr>
+        <br>
+
+        <div class="container-fluid">
+            <h4>Most Profitable Items</h4>
+            <table class="table" id="mostProfitable">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Cost</th>
+                    <th>Price to Consumer</th>
+                    <th>Profit</th>
+                </tr>
+            </table>
+
+            <br>
+            <hr>
+            <br>
+
+            <h4>Most Popular Items</h4>
+            <table class="table" id="mostPopular">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Amount Sold</th>
+                </tr>
+            </table>
+
+            <br>
+            <hr>
+            <br>
+
+            <h4>Highest Revenue Items</h4>
+            <table class="table" id="highestRevenue">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Amount Sold</th>
+                    <th>Revenue Per</th>
+                    <th>Total Revenue</th>
+                </tr>
+            </table> 
+     
+        <br>
+        <hr>
+        <br>
+        
+        </div>
+    </div>
+
+</body>
+
+<script>
+    // Function to load stats
+
+    function loadStats() {
+
+        // Most Profitable
+        let phttp = new XMLHttpRequest();
+        phttp.open("GET", "http://localhost:8080/itemsolapProfit", true);
+        phttp.setRequestHeader("Content-Type", "application/json");
+        phttp.send();
+        phttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                let profitList = JSON.parse(this.responseText);
+
+                let profitTable = document.getElementById('mostProfitable');
+
+                for (i=0; i < 6; i++) {
+                    
+                    let newRow = document.createElement('tr');
+
+                    // pull from object to populate row
+                    let td1 = document.createElement('td');
+                    td1.innerHTML = profitList[i].itemId;
+                    newRow.append(td1);
+
+                    let td2 = document.createElement('td');
+                    td2.innerHTML = `${profitList[i].name}`;
+                    newRow.append(td2);
+
+                    let td3 = document.createElement('td');
+                    td3.innerHTML = `$ ${profitList[i].costPerUnit}`;
+                    newRow.append(td3);
+
+                    let td4 = document.createElement('td');
+                    td4.innerHTML = `$ ${profitList[i].retailPerUnit}`;
+                    newRow.append(td4);
+
+                    let td5 = document.createElement('td');
+                    td5.innerHTML = `$ ${profitList[i].totalProfitMade}`;
+                    newRow.append(td5);
+                    
+                    profitTable.append(newRow);
+                }
+            }
+        }
+        
+
+
+        // Most Popular
+        // we'll need to grab the items that appear most frequently in invoices
+        let xhttp = new XMLHttpRequest();
+
+        xhttp.open("GET", "http://localhost:8080/itemsolapQuantity", true);
+
+        xhttp.send();
+
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                let itemList = JSON.parse(this.responseText);
+                console.log(itemList);
+
+                // print to page
+                // get element by id
+                let popTable = document.getElementById('mostPopular');
+
+                for (i=0; i < 6; i++) {
+                    let id = itemList[i].itemId;
+                    let qty = itemList[i].totalQuantitySold;
+                    let getItem = new XMLHttpRequest();
+                    getItem.open("GET", `http://localhost:8080/items/${id}`, true);
+                    getItem.send();
+                    getItem.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            let item = JSON.parse(this.responseText);
+                            console.log(item);
+                            // create new table row
+                            let newRow = document.createElement('tr');
+                            // create table data
+                            let td1 = document.createElement('td');
+                            td1.innerHTML = item.item_id;
+                            newRow.append(td1);
+
+                            let td2 = document.createElement('td');
+                            td2.innerHTML = item.name;
+                            newRow.append(td2);
+
+                            let td3 = document.createElement('td');
+                            td3.innerHTML = qty;
+                            newRow.append(td3)
+                            popTable.append(newRow);
+                        }
+                    }
+                }
+            }
+        }
+
+        // Highest Revenue
+        let rhttp = new XMLHttpRequest();
+        rhttp.open("GET", "http://localhost:8080/itemsolapRevenue", true);
+        rhttp.setRequestHeader("Content-Type", "application/json");
+        rhttp.send();
+        rhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                let revList = JSON.parse(this.responseText);
+
+                let revTable = document.getElementById("highestRevenue");
+
+                for (i=0; i < 6; i++) {
+                    //create a new row
+                    let newRow = document.createElement('tr');
+
+                    // pull from object to populate row
+                    let td1 = document.createElement('td');
+                    td1.innerHTML = revList[i].itemId;
+                    newRow.append(td1);
+
+                    let td2 = document.createElement('td');
+                    td2.innerHTML = `${revList[i].name}`;
+                    newRow.append(td2);
+
+                    let td3 = document.createElement('td');
+                    td3.innerHTML = revList[i].totalQuantitySold;
+                    newRow.append(td3);
+
+                    let td4 = document.createElement('td');
+                    td4.innerHTML = `$ ${revList[i].retailPerUnit}`;
+                    newRow.append(td4);
+
+                    let td5 = document.createElement('td');
+                    td5.innerHTML = `$ ${revList[i].totalRetailEarnings}`;
+                    newRow.append(td5);
+                    
+                    revTable.append(newRow);
+                }
+            }
+        }
+
+
+    }
+
+
+
+
+
+
+    // Function to create a new item in inventory
+    let submitButton = document.getElementById("formSubmit");
+    submitButton.addEventListener("click", submit(event));
+
+    function submit(event) {
+        event.preventDefault();
+        // collect input
+        let newName = document.getElementById('name').value;
+        let newDesc = document.getElementById('description').value;
+        let cost = document.getElementById('costPerUnit').value;
+        let quantity = document.getElementById('quantity').value;
+        let weight = document.getElementById('weight').value;
+        let dims = document.getElementById('dimensions').value;
+        let newType = document.getElementById('type').value;
+        let vid = document.getElementById('vendor').value;
+
+        // make object
+        let newItem = {
+            name : newName,
+            description : newDesc,
+            weight_oz : weight,
+            dimensions_in : dims,
+            num_stocked : quantity,
+            type : newType,
+            vendor_id : vid
+        }
+        console.log(newItem);
+        // AJAX call to server to add new inventory item
+        let xhttp2 = new XMLHttpRequest();
+
+        xhttp2.open("POST", "http://localhost:8080/items", true);
+
+        xhttp2.setRequestHeader("Content-Type", "application/json");
+
+        xhttp2.send(JSON.stringify(newItem));
+
+        xhttp2.onreadystatechange = function() {
+
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText);
+                // modal to state that it was successfully updated
+            }
+        }
+    }
+
+
+    function search() {
+
+// Collect input from search field
+let searchInput = document.getElementById("search").value;
+
+let xhttp = new XMLHttpRequest();
+
+xhttp.open("GET", `http://localhost:8080/items/search?name=${searchInput}`, true);
+
+xhttp.send();
+
+xhttp.onreadystatechange = function() {
+
+    if (this.readyState == 4 && this.status == 200) {
+        let item = JSON.parse(this.responseText);
+        console.log(this.responseText);
+
+        // now that we have the item... pass it the id into the url and send to item page
+
+        window.location.href = (`item.html?id=${item.item_id}`);
+        // console.log(this.response);
+    }
+}
+
+}
+</script>
+</html>
