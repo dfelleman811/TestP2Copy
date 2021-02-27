@@ -10,10 +10,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ComponentScan("com.excape") // Annotation to provide location for packages
 @EnableJpaRepositories("com.excape.repositories") // Annotation specifically for Repo resource location
 @EntityScan("com.excape.beans") // Annotation to tell it where our entities are
-public class Project2EscapeRoomProductAppApplication {
+public class P2CopyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Project2EscapeRoomProductAppApplication.class, args);
+		SpringApplication.run(P2CopyApplication.class, args);
 	}
 	
 		
